@@ -23,7 +23,7 @@
   <body>
     <!-- HEADER -->
     <header class="header-section">
-      <div class="container header-container">
+      <div class="header-container">
         <nav class="header-navigation">
           <a class="header-logo"
             >Web<span class="header-logo-accent">Studio</span></a
@@ -52,6 +52,11 @@
             </li>
           </ul>
         </address>
+        <button type="button" class="open-menu" data-menu-open>
+          <svg class="open-menu" width="24" height="24">
+            <use href="./images/icons.svg#icon-heroicons-solid_menu"></use>
+          </svg>
+        </button>
       </div>
     </header>
 
@@ -60,7 +65,9 @@
       <section class="motto-page section">
         <div class="container">
           <h1 class="main-headline">Effective Solutions for Your Business</h1>
-          <button type="button" class="button">Order Service</button>
+          <button type="button" class="button" data-modal-open>
+            Order Service
+          </button>
         </div>
       </section>
       <!-- SECTION 2 FEATURES-->
@@ -402,7 +409,7 @@
     <footer class="footer-box">
       <div class="container footer-container">
         <div class="first-footer-box">
-          <a class="footer-logo"
+          <a href="./index.html" class="footer-logo"
             >Web<span class="footer-logo-studio">Studio</span></a
           >
           <p class="footer-text">
@@ -443,7 +450,7 @@
             </li>
           </ul>
         </div>
-        <div class="third-footer-box">
+        <div class="footer-subscribe">
           <p class="social-m">Subscribe</p>
           <form class="footer-form">
             <label for="footer-input" class="footer-container">
@@ -465,9 +472,10 @@
         </div>
       </div>
     </footer>
-    <div class="backdrop is-open">
+    <!-- --------MODAL-FORM----------- -->
+    <div class="backdrop" data-modal>
       <div class="modal">
-        <button type="button" class="modal-btn">
+        <button type="button" class="modal-btn" data-modal-close>
           <svg class="modal-btn-x" width="8" height="8">
             <use href="./images/icons.svg#icon-close-black-18dp-2-1"></use>
           </svg>
@@ -543,14 +551,120 @@
               <span class="checkbox-text">
                 <svg class="check-icon" width="10" height="8">
                   <use href="./images/icons.svg#icon-checked"></use>
-                </svg> </span
-              >I accept the terms and conditions of the
-              <a href="" class="privacy-link">Privacy Policy</a>
-            </label>
+                </svg>
+              </span>
+              I accept the terms and conditions of the
+              <a href="" class="privacy-link">Privacy Policy</a></label
+            >
           </div>
           <button type="submit" class="submit-btn">Send</button>
         </form>
       </div>
     </div>
+    <!-- -----MENU-MOBILE-MODAL--------- -->
+    <div class="mobile-menu" data-menu>
+      <button type="button" class="menu-btn" data-menu-close>
+        <svg class="modal-btn-x" width="8" height="8">
+          <use href="./images/icons.svg#icon-close-black-18dp-2-1"></use>
+        </svg>
+      </button>
+      <ul class="mobile-menu-nav">
+        <li class="mobile-menu-item">
+          <a href="./index.html" class="mobile-menu-link">Studio</a>
+        </li>
+        <li class="mobile-menu-item">
+          <a href="" class="mobile-menu-link">Portfolio</a>
+        </li>
+        <li class="mobile-menu-item">
+          <a href="" class="mobile-menu-link">Contacts</a>
+        </li>
+      </ul>
+      <div class="mob-menu-soc-contacts">
+        <ul class="mobile-menu-contact">
+          <li class="mob-menu-contacts-item">
+            <a class="mob-contacts-link" href="tel:+110001111111"
+              >+11 (000) 111-11-11</a
+            >
+          </li>
+          <li class="mob-menu-contacts-item">
+            <a class="mob-contacts-link" href="mailto:info@devstudio.com"
+              >info@devstudio.com</a
+            >
+          </li>
+        </ul>
+        <ul class="mobile-menu-social">
+          <li class="mobile-menu-social-item">
+            <a href="" class="mobile-menu-social-link">
+              <svg class="mobile-menu-social-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="mobile-menu-social-item">
+            <a href="" class="mobile-menu-social-link">
+              <svg class="mobile-menu-social-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-twitter"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="mobile-menu-social-item">
+            <a href="" class="mobile-menu-social-link">
+              <svg class="mobile-menu-social-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="mobile-menu-social-item">
+            <a href="" class="mobile-menu-social-link">
+              <svg class="mobile-menu-social-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-linkedin"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      (() => {
+        const refs = {
+          openMenuBtn: document.querySelectorAll('[data-menu-open]'),
+          closeMenuBtn: document.querySelectorAll('[data-menu-close]'),
+          menu: document.querySelector('[data-menu]'),
+        };
+
+        refs.openMenuBtn.forEach(element => {
+          element.addEventListener('click', toggleMenu);
+        });
+        refs.closeMenuBtn.forEach(element => {
+          element.addEventListener('click', toggleMenu);
+        });
+
+        function toggleMenu() {
+          refs.menu.classList.toggle('is-open');
+          document.body.classList.toggle('no-scroll');
+        }
+      })();
+    </script>
+    <script>
+      (() => {
+        const refs = {
+          openMenuBtn: document.querySelectorAll('[data-modal-open]'),
+          closeMenuBtn: document.querySelectorAll('[data-modal-close]'),
+          menu: document.querySelector('[data-modal]'),
+        };
+
+        refs.openMenuBtn.forEach(element => {
+          element.addEventListener('click', toggleMenu);
+        });
+        refs.closeMenuBtn.forEach(element => {
+          element.addEventListener('click', toggleMenu);
+        });
+
+        function toggleMenu() {
+          refs.menu.classList.toggle('is-open');
+          document.body.classList.toggle('no-scroll');
+        }
+      })();
+    </script>
   </body>
 </html>

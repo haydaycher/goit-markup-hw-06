@@ -11,6 +11,7 @@ body {
   color: #434455;
   background-color: #ffffff;
   font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
 }
 .no-scroll {
   overflow: hidden;
@@ -300,21 +301,69 @@ img {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/people-office.jpg);
+    url(../images/people-office-mob.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   color: #ffffff;
 }
+@media screen and (min-resolution: 2dppx),
+  (min-resolution: 192dpi),
+  (min-device-pixel-ratio: 2) {
+  .motto-page {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/people-office-mob-2x.jpg);
+  }
+}
 
 @media screen and (min-width: 768px) {
   .motto-page {
     padding: 112px 0;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/people-office-tab.jpg);
+  }
+}
+@media screen and (min-resolution: 2dppx),
+  (min-resolution: 192dpi),
+  (min-device-pixel-ratio: 2) {
+  .motto-page {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/people-office-tab-2x.jpg);
   }
 }
 @media screen and (min-width: 1158px) {
   .motto-page {
     padding: 188px 0;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/people-office.jpg);
+  }
+}
+@media screen and (min-resolution: 2dppx),
+  (min-resolution: 192dpi),
+  (min-device-pixel-ratio: 2) {
+  .motto-page {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/people-office-2x.jpg);
   }
 }
 
@@ -494,12 +543,18 @@ img {
 }
 @media screen and (min-width: 768px) {
   .features-description {
+    text-align: left;
+
+    width: 356px;
+    /* margin: 0 auto;
+    text-align: left; */
   }
 }
 @media screen and (min-width: 1158px) {
   .features-description {
     font-weight: 400;
     font-size: 16px;
+    width: 264px;
   }
 }
 /* ------------3---CREW-SECTION---------------------------- */
@@ -674,16 +729,15 @@ img {
     box-shadow: none;
     box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08);
   }
-}
+  .portfolio-list-item:hover {
+    border: 1px solid #e7e9fc;
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+      0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  }
 
-.portfolio-list-item:hover {
-  border: 1px solid #e7e9fc;
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-}
-
-.portfolio-list-item:hover .portfolio-cover-text {
-  transform: translateY(0);
+  .portfolio-list-item:hover .portfolio-cover-text {
+    transform: translateY(0);
+  }
 }
 
 .portfolio-cover-wrap {
@@ -1133,6 +1187,7 @@ img {
 }
 
 .modal-check {
+  flex-shrink: 0;
   margin-right: 8px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -1343,4 +1398,5 @@ img {
 .mob-menu-soc-contacts {
   display: inline-block;
   width: 280px;
+  padding: 16px 0;
 }

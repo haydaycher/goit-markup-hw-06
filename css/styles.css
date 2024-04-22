@@ -530,20 +530,17 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
-  width: 264px;
   margin: 0;
 }
 @media screen and (min-width: 768px) {
   .features-description {
     text-align: left;
-    width: 356px;
   }
 }
 @media screen and (min-width: 1158px) {
   .features-description {
     font-weight: 400;
     font-size: 16px;
-    width: 264px;
   }
 }
 /* ------------3---CREW-SECTION---------------------------- */
@@ -1315,6 +1312,9 @@ img {
   color: #2e2f42;
 }
 
+.mobile-menu-link {
+  color: #2e2f42;
+}
 .mob-contacts-link:focus,
 .mobile-menu-link:focus {
   color: #404bbf;
